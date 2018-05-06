@@ -1,0 +1,12 @@
+{% if vyos_config.interfaces is defined %}
+{% for iftype,ifdata in vyos_config.interfaces.items() %}
+{% for ifname,value in ifdata.items() %}
+{% if value.address is defined %}
+set interfaces {{ iftype }} {{ ifname }} address '{{ value.address }}'
+{% endif %}
+{% if value.description is defined %}
+set interfaces {{ iftype }} {{ ifname }} description '{{ value.description }}'
+{% endif %}
+{% endfor %}
+{% endfor %}
+{% endif %}

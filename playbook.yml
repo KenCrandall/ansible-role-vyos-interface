@@ -1,0 +1,33 @@
+---
+- hosts: all
+  gather_facts: no
+  connection: local
+  roles:
+    - role: ansible-role-vyos-interface
+
+  vars:
+    vyos_config:
+      connection:
+        host:     "{{ lookup('env', 'ANSIBLE_VYOS_HOST') }}"
+        username: "{{ lookup('env', 'ANSIBLE_VYOS_USER') }}"
+        password: "{{ lookup('env', 'ANSIBLE_VYOS_PASS') }}"
+
+      interfaces:
+        ethernet:
+          eth0:
+            address: dhcp
+
+        dummy:
+          dum0:
+            address: 10.2.0.1/24
+
+          dum1:
+            address: 10.2.1.1/24
+
+      del_interfaces:
+        dummy:
+          dum0:
+            address: 10.2.0.2/24
+
+          dum1:
+            address: 10.2.1.2/24

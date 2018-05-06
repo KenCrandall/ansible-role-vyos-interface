@@ -1,0 +1,4 @@
+---
+vyos_config:
+  connection:
+    username: "vyos"
