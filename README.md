@@ -5,7 +5,7 @@ VyOSのインターフェース設定の追加、削除を行います。
 Requirements
 ------------
 
-Ansible version <= 2.2
+Ansible version >= 2.2
 
 Role Variables
 --------------
