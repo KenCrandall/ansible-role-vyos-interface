@@ -2,9 +2,7 @@
 - name: setting interfaces
   vyos_config:
     src: "templates/interfaces.j2"
-    provider: "{{ vyos_config.connection }}"
 
 - name: delete setting interfaces
   vyos_config:
     src: "templates/del-interfaces.j2"
-    provider: "{{ vyos_config.connection }}"

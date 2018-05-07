@@ -1,4 +1,6 @@
 ---
+ansible_user: "{{ lookup('env', 'ANSIBLE_VYOS_USER')|default(vyos) }}"
+ansible_network_os: vyos
 vyos_config:
   connection:
     username: "vyos"
