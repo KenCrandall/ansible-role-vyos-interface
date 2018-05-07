@@ -7,6 +7,8 @@ Requirements
 
 Ansible version >= 2.2
 
+(connection: network_cli 利用時 >=2.5)
+
 Role Variables
 --------------
 
